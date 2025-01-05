@@ -1,0 +1,46 @@
+plugins {
+    id 'com.android.application'
+    id 'com.google.gms.google-services'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    namespace 'com.android.emptyappwithlogin'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.amazon.emptyappwithlogin"
+        minSdk 30
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // AndroidX & UI
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+
+    // ViewModel & LiveData
+    implementation libs.androidx.lifecycle.viewmodel
+    implementation libs.androidx.lifecycle.livedata
+
+    // Firebase
+    implementation platform(libs.firebase.bom)
+    implementation libs.firebase.auth
+    implementation libs.firebase.firestore
+    implementation libs.firebase.analytics
+
+    // Dagger Hilt
+    implementation libs.hilt.android
+    annotationProcessor libs.hilt.compiler
+
+    implementation 'com.google.android.material:material:1.9.0'
+}
